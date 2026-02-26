@@ -248,3 +248,17 @@ A reference list of models is also available in this repository: 📊 [models.xl
 - 🤖 [Available Models Catalog](https://www.foundrylocal.ai/models)
 - 📘 [Microsoft Learn — Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/what-is-foundry-local)
 - 📊 [Models Reference (Excel)](models.xlsx)
+
+---
+
+## Author
+
+| Field | Details |
+| --- | --- |
+| Name | Serge Retkowsky |
+| Created | 26 February 2023 |
+| Last updated | 26 February 2026 |
+| Email | serge.retkowsky@microsoft.com |
+| LinkedIn | https://www.linkedin.com/in/serger/ |
+| Medium publications | https://medium.com/@sergems18/ |
+

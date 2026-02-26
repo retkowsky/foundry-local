@@ -8,6 +8,8 @@
 
 🌐 **Website**: [www.foundrylocal.ai](https://www.foundrylocal.ai/)
 
+> Foundry Local is currently in preview.
+
 ---
 
 ## 🧠 What is Foundry Local?
@@ -235,12 +237,6 @@ A reference list of models is also available in this repository: 📊 [models.xl
 | `olive-ai` | Microsoft Olive for model optimization |
 | `transformers` | Hugging Face Transformers |
 | `torch` | PyTorch |
-
----
-
-## 🏷️ Topics
-
-`edge` · `foundry-local` · `genai` · `microsoft` · `microsoft-foundry`
 
 ---
 

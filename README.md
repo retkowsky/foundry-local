@@ -10,6 +10,39 @@
 
 ---
 
+## 🧠 What is Foundry Local?
+
+[Foundry Local](https://www.foundrylocal.ai/) is a **Microsoft on-device AI inference solution** designed to let developers and organizations run modern generative AI models directly on their local hardware — Windows PCs, macOS (Apple Silicon), or servers — without relying on cloud-based endpoints.
+
+### Key Highlights
+
+- **🔒 Complete Data Privacy** — All prompts and outputs are processed entirely on your device. Data never leaves your system, making it ideal for sensitive, confidential, or regulated workloads in healthcare, government, finance, and more.
+- **⚡ Low-Latency Inference** — Run AI models locally for real-time, interactive experiences with minimal latency — no network round-trips required.
+- **📴 Offline Operation** — Once models are downloaded, everything works fully offline. Perfect for remote environments, air-gapped systems, or locations with unreliable connectivity.
+- **💰 Cost Efficiency** — Leverage your existing hardware (CPU, GPU, NPU) for inference, eliminating recurring cloud costs and providing predictable cost control.
+- **🔗 OpenAI-Compatible API** — Foundry Local exposes an OpenAI-compatible REST API, allowing you to use the same code for local and cloud-based inference. Switch between local and Azure endpoints by simply changing the base URL.
+- **🛠️ Multiple Integration Options** — Interact via CLI, Python SDK, JavaScript SDK, .NET SDK, or REST API — flexible integration for any workflow.
+- **⚙️ Automatic Hardware Optimization** — Foundry Local detects your hardware and automatically downloads the best-optimized model variant (NVIDIA CUDA, AMD DirectML, Apple Metal, Intel/Qualcomm NPU, or CPU with INT4/INT8 quantization).
+- **🚀 No Azure Subscription Required** — Use Foundry Local entirely standalone, though hybrid cloud-to-edge workflows with Azure AI Foundry are fully supported.
+
+### Supported Platforms
+
+| Platform | Details |
+|----------|---------|
+| **Windows** | Windows 10/11 (x64, ARM), Windows Server 2025 |
+| **macOS** | macOS with Apple Silicon (M1/M2/M3/M4) |
+| **Hardware** | Min 8 GB RAM (16 GB recommended); NVIDIA, AMD, Intel, Qualcomm GPUs/NPUs, Apple Metal |
+
+### Typical Use Cases
+
+- 🏥 Applications handling sensitive or regulated data (HIPAA, GDPR)
+- 🌐 Scenarios with unreliable or no internet access
+- 🧪 Prototyping and developing AI applications before cloud deployment
+- ⏱️ Real-time, interactive AI-driven applications requiring low latency
+- 💸 Reducing ongoing public cloud inference costs
+
+---
+
 ## 📚 Notebooks
 
 | # | Notebook | Description |
@@ -35,6 +68,70 @@
 
 ---
 
+## 🏗️ Architecture
+
+Foundry Local's architecture is designed for **efficient, private, and scalable on-device AI inference**. For the complete architecture reference, see the official documentation: [Foundry Local Architecture on Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/concepts/foundry-local-architecture?view=foundry-classic).
+
+### Core Components
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Developer / Application                       │
+│              (CLI, Python SDK, JS SDK, .NET SDK)                │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   Foundry Local Service                          │
+│            (OpenAI-Compatible REST API Endpoint)                │
+│                                                                  │
+│  ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐    │
+│  │   Model      │  │    Cache     │  │     Service        │    │
+│  │   Manager    │  │    Manager   │  │     Manager        │    │
+│  └──────┬───────┘  └──────┬───────┘  └────────────────────┘    │
+│         │                 │                                      │
+│         ▼                 ▼                                      │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │                    ONNX Runtime                          │    │
+│  │     (CPU / CUDA / DirectML / Metal / NPU Providers)     │    │
+│  └─────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Local Hardware                                │
+│          (CPU, NVIDIA GPU, AMD GPU, Apple Silicon, NPU)         │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Component Details
+
+| Component | Role |
+|-----------|------|
+| **Foundry Local Service** | Core engine that orchestrates local AI model execution. Exposes an OpenAI-compatible REST API endpoint for inference and model management. |
+| **Model Manager** | Handles the full model lifecycle — downloading, loading, unloading, compilation, and removal from cache. |
+| **Cache Manager** | Manages local storage of AI models. Configure cache locations, list cached models, and optimize storage space. |
+| **Service Manager** | Controls the Foundry Local Service — start, stop, monitor, and restart for maintenance or configuration changes. |
+| **ONNX Runtime** | The inference engine that executes optimized models across supported hardware. Uses execution providers (CUDA, DirectML, Metal, CPU) for hardware-specific acceleration. |
+| **CLI & SDKs** | Primary interfaces to interact with the service. CLI for command-line operations; Python, JavaScript, C#, and Rust SDKs for programmatic integration. |
+
+### How It Works
+
+1. **Request** — The developer sends a request via CLI, SDK, or REST API
+2. **Routing** — The Foundry Local Service receives the request through its OpenAI-compatible endpoint
+3. **Model Operations** — The Model Manager loads the requested model (downloading and caching if needed)
+4. **Inference** — ONNX Runtime executes the inference using the optimal hardware execution provider
+5. **Response** — Results are returned through the same API interface
+
+### Key Architectural Benefits
+
+- 🔐 **Local-first design** — All processing happens on-device with no data leaving the system
+- 🔄 **Cloud-compatible** — Same API interface as Azure OpenAI, enabling seamless local-to-cloud portability
+- ⚡ **Hardware-aware** — Automatic detection and optimization for available compute resources
+- 📦 **Efficient caching** — Models are downloaded once and cached locally for instant offline access
+
+---
+
 ## 📖 Documentation
 
 The official Foundry Local documentation is available at **[www.foundrylocal.ai](https://www.foundrylocal.ai/)** and covers everything you need to get started and build on-device AI applications.
@@ -45,6 +142,7 @@ The official Foundry Local documentation is available at **[www.foundrylocal.ai]
 |----------|------|-------------|
 | 🌐 Official Website | [foundrylocal.ai](https://www.foundrylocal.ai/) | Main homepage with overview, downloads, and getting started guides |
 | 📘 Microsoft Learn | [Foundry Local on Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/what-is-foundry-local) | In-depth documentation including concepts, quickstarts, and API references |
+| 🏗️ Architecture | [Foundry Local Architecture](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/concepts/foundry-local-architecture?view=foundry-classic) | Detailed architecture overview and component descriptions |
 | 🚀 Getting Started Guide | [Get Started with Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/get-started) | Step-by-step guide to install and run your first model |
 
 ### What You'll Find in the Docs
@@ -162,6 +260,7 @@ A reference list of models is also available in this repository: 📊 [models.xl
 
 - 🌐 [Foundry Local Website](https://www.foundrylocal.ai/)
 - 📖 [Foundry Local Documentation](https://www.foundrylocal.ai/)
+- 🏗️ [Foundry Local Architecture](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/concepts/foundry-local-architecture?view=foundry-classic)
 - 🤖 [Available Models Catalog](https://www.foundrylocal.ai/models)
 - 📘 [Microsoft Learn — Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/what-is-foundry-local)
 - 📊 [Models Reference (Excel)](models.xlsx)

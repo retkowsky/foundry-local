@@ -148,19 +148,15 @@ The official Foundry Local documentation is available at **[www.foundrylocal.ai]
 
 ## 🤖 Available Models
 
-Foundry Local provides a curated catalog of **pre-optimized, open-source AI models** ready to run on your device. Browse the full model catalog at **[foundrylocal.ai/models](https://www.foundrylocal.ai/models)**.
+Foundry Local provides a curated catalog of **pre-optimized, open-source AI models** ready to run on your device. 
+Browse the full model catalog at **[foundrylocal.ai/models](https://www.foundrylocal.ai/models)**.
 
 ### Featured Models
++25 models are available.
 
-| Model | Parameters | Use Cases |
-|-------|-----------|-----------|
-| **Microsoft Phi 4** | ~14B | Complex reasoning, analysis, code generation |
-| **Microsoft Phi 4 Mini** | ~3.8B | General chat, coding, lightweight tasks |
-| **Microsoft Phi 4 Reasoning** | ~14B | Advanced multi-step reasoning |
-| **Microsoft Phi 4 Reasoning Mini** | ~3.8B | Lightweight reasoning tasks |
-| **Microsoft Phi 3.5 Mini** | ~3.8B | General-purpose chat and instruction following |
-| **Mistral 7B** | ~7B | General chat, text generation, analysis |
-| **Qwen 2.5** | 0.5B–1.5B+ | Multilingual chat, coding, instruction following |
+<p align="center">
+  <img src="models.jpg"/>
+</p>
 
 > 💡 The model catalog is regularly updated. Visit [foundrylocal.ai/models](https://www.foundrylocal.ai/models) for the latest available models.
 

@@ -256,7 +256,7 @@ A reference list of models is also available in this repository: 📊 [models.xl
 | Field | Details |
 | --- | --- |
 | Name | Serge Retkowsky |
-| Created | 26 February 2023 |
+| Created | 26 February 2026 |
 | Last updated | 26 February 2026 |
 | Email | serge.retkowsky@microsoft.com |
 | LinkedIn | https://www.linkedin.com/in/serger/ |

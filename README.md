@@ -56,18 +56,6 @@
 
 ---
 
-## 🖼️ Screenshots
-
-<p align="center">
-  <img src="screenshot1.jpg" width="800"/><br/><br/>
-  <img src="screenshot2.jpg" width="800"/><br/><br/>
-  <img src="screenshot3.jpg" width="800"/><br/><br/>
-  <img src="screenshot4.jpg" width="800"/><br/><br/>
-  <img src="screenshot5.jpg" width="800"/>
-</p>
-
----
-
 ## 🏗️ Architecture
 
 Foundry Local's architecture is designed for **efficient, private, and scalable on-device AI inference**. For the complete architecture reference, see the official documentation: [Foundry Local Architecture on Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/concepts/foundry-local-architecture?view=foundry-classic).

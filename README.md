@@ -64,35 +64,7 @@ Foundry Local's architecture is designed for **efficient, private, and scalable 
 
 ### Core Components
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Developer / Application                      │
-│              (CLI, Python SDK, JS SDK, .NET SDK)                │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                   Foundry Local Service                         │
-│            (OpenAI-Compatible REST API Endpoint)                │
-│                                                                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐     │
-│  │   Model      │  │    Cache     │  │     Service        │     │
-│  │   Manager    │  │    Manager   │  │     Manager        │     │
-│  └──────┬───────┘  └──────┬───────┘  └────────────────────┘     │
-│         │                 │                                     │
-│         ▼                 ▼                                     │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │                    ONNX Runtime                         │    │
-│  │     (CPU / CUDA / DirectML / Metal / NPU Providers)     │    │
-│  └─────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    Local Hardware                               │
-│          (CPU, NVIDIA GPU, AMD GPU, Apple Silicon, NPU)         │
-└─────────────────────────────────────────────────────────────────┘
-```
+<img src="foundry_local_architecture.png">
 
 ### Component Details
 

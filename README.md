@@ -4,7 +4,7 @@
   <img src="foundrylocal.jpg" width="800"/>
 </p>
 
-**Foundry Local** is an on-device AI inference solution that lets you run AI models locally through a **CLI**, **SDK**, or **REST API**. This repository provides a collection of Jupyter Notebook tutorials to help you get started and explore advanced capabilities.
+**Foundry Local** is an on-device AI inference solution that lets you run AI models locally through a **CLI**, **SDK**, or **REST API**. This repository provides a collection of Jupyter Notebook tutorials, practical examples, and reference materials to help you explore and build with Foundry Local.
 
 🌐 **Website**: [www.foundrylocal.ai](https://www.foundrylocal.ai/)
 
@@ -14,17 +14,17 @@
 
 ## 🧠 What is Foundry Local?
 
-[Foundry Local](https://www.foundrylocal.ai/) is a **Microsoft on-device AI inference solution** designed to let developers and organizations run modern generative AI models directly on their local hardware — Windows PCs, macOS (Apple Silicon), or servers — without relying on cloud-based endpoints.
+[Foundry Local](https://www.foundrylocal.ai/) is a **Microsoft on-device AI inference solution** designed to let developers and organizations run modern generative AI models directly on their local hardware. It supports CPUs, GPUs, and NPUs, offering a privacy-first and low-latency way to build and test AI workloads without relying entirely on the cloud.
 
 ### Key Highlights
 
-- **🔒 Complete Data Privacy** — All prompts and outputs are processed entirely on your device. Data never leaves your system, making it ideal for sensitive, confidential, or regulated workloads in healthcare, government, finance, and more.
+- **🔒 Complete Data Privacy** — All prompts and outputs are processed entirely on your device. Data never leaves your system, making it ideal for sensitive, confidential, or regulated workloads.
 - **⚡ Low-Latency Inference** — Run AI models locally for real-time, interactive experiences with minimal latency — no network round-trips required.
 - **📴 Offline Operation** — Once models are downloaded, everything works fully offline. Perfect for remote environments, air-gapped systems, or locations with unreliable connectivity.
 - **💰 Cost Efficiency** — Leverage your existing hardware (CPU, GPU, NPU) for inference, eliminating recurring cloud costs and providing predictable cost control.
-- **🔗 OpenAI-Compatible API** — Foundry Local exposes an OpenAI-compatible REST API, allowing you to use the same code for local and cloud-based inference. Switch between local and Azure endpoints by simply changing the base URL.
+- **🔗 OpenAI-Compatible API** — Foundry Local exposes an OpenAI-compatible REST API, allowing you to use the same code for local and cloud-based inference. Switch between local and Azure endpoints with minimal code changes.
 - **🛠️ Multiple Integration Options** — Interact via CLI, Python SDK, JavaScript SDK, .NET SDK, or REST API — flexible integration for any workflow.
-- **⚙️ Automatic Hardware Optimization** — Foundry Local detects your hardware and automatically downloads the best-optimized model variant (NVIDIA CUDA, AMD DirectML, Apple Metal, Intel/Qualcomm NPU, or CPU with INT4/INT8 quantization).
+- **⚙️ Automatic Hardware Optimization** — Foundry Local detects your hardware and automatically downloads the best-optimized model variant (NVIDIA CUDA, AMD DirectML, Apple Metal, Intel/Qualcomm NPU, or CPU).
 - **🚀 No Azure Subscription Required** — Use Foundry Local entirely standalone, though hybrid cloud-to-edge workflows with Azure AI Foundry are fully supported.
 
 ### Supported Platforms
@@ -54,13 +54,14 @@
 | 03 | [Foundry Local Practical Applications](03%20Foundry%20Local%20Practical%20Applications.ipynb) | Real-world use cases and practical examples with Foundry Local |
 | 04 | [Foundry Local Mistral 7B](04%20Foundry%20Local%20Mistral7b.ipynb) | Running and interacting with the Mistral 7B model locally |
 | 05 | [Advanced Function Calling with Foundry Local](05%20Advanced%20Function%20Calling%20with%20Foundry%20Local.ipynb) | Implementing advanced function calling and tool use with local models |
-| 06 | [Deploying Custom Models with Microsoft Olive and Foundry Local](06%20Deploying%20Custom%20Models%20with%20Microsoft%20Olive%20and%20Foundry%20Local.ipynb) | Optimizing and deploying custom models using Microsoft Olive |
+| 06 | [Deploying Custom Models with Microsoft Olive and Foundry Local](06%20Deploying%20Custom%20Models%20with%20Microsoft%20Olive%20and%20Foundry%20Local.ipynb) | Optimizing and deploying custom models with Microsoft Olive for local inference |
+| 07 | [Foundry Local 1.1](Foundry%20local%201.1.ipynb) | New notebook covering Foundry Local version 1.1 features and updates |
 
 ---
 
 ## 🏗️ Architecture
 
-Foundry Local's architecture is designed for **efficient, private, and scalable on-device AI inference**. For the complete architecture reference, see the official documentation: [Foundry Local Architecture on Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/concepts/foundry-local-architecture?view=foundry-classic).
+Foundry Local's architecture is designed for **efficient, private, and scalable on-device AI inference**. For the complete architecture reference, see the official documentation: [Foundry Local Architecture](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/concepts/foundry-local-architecture?view=foundry-classic)
 
 ### Core Components
 
@@ -104,8 +105,8 @@ The official Foundry Local documentation is available at **[www.foundrylocal.ai]
 |----------|------|-------------|
 | 🌐 Official Website | [foundrylocal.ai](https://www.foundrylocal.ai/) | Main homepage with overview, downloads, and getting started guides |
 | 📘 Microsoft Learn | [Foundry Local on Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/what-is-foundry-local) | In-depth documentation including concepts, quickstarts, and API references |
-| 🏗️ Architecture | [Foundry Local Architecture](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/concepts/foundry-local-architecture?view=foundry-classic) | Detailed architecture overview and component descriptions |
-| 🚀 Getting Started Guide | [Get Started with Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/get-started) | Step-by-step guide to install and run your first model |
+| 🏗️ Architecture | [Foundry Local Architecture](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/concepts/foundry-local-architecture?view=foundry-classic) | Detailed architecture and component overview |
+| 🚀 Getting Started Guide | [Get Started with Foundry Local](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-local/get-started) | Step-by-step guide to install and run your first model locally |
 
 ### What You'll Find in the Docs
 
@@ -160,7 +161,7 @@ foundry model remove <model-alias>
 
 ### Bring Your Own Models
 
-You can also deploy **custom models** from Hugging Face by converting them to ONNX format using [Microsoft Olive](https://github.com/microsoft/olive). See [Notebook 06](06%20Deploying%20Custom%20Models%20with%20Microsoft%20Olive%20and%20Foundry%20Local.ipynb) for a complete walkthrough.
+You can also deploy **custom models** from Hugging Face by converting them to ONNX format using [Microsoft Olive](https://github.com/microsoft/olive). See [Notebook 06](06%20Deploying%20Custom%20Models%20with%20Microsoft%20Olive%20and%20Foundry%20Local.ipynb) for a practical walkthrough.
 
 A reference list of models is also available in this repository: 📊 [models.xlsx](models.xlsx)
 
@@ -225,8 +226,7 @@ A reference list of models is also available in this repository: 📊 [models.xl
 | --- | --- |
 | Name | Serge Retkowsky |
 | Created | 26 February 2026 |
-| Last updated | 26 February 2026 |
+| Last updated | 20 May 2026 |
 | Email | serge.retkowsky@microsoft.com |
 | LinkedIn | https://www.linkedin.com/in/serger/ |
 | Medium publications | https://medium.com/@sergems18/ |
-
